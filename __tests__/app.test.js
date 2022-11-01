@@ -1,14 +1,14 @@
 const request = require('supertest');
 const app = require('../lib/app');
 
-const { signs } = require('../lib/signs-data');
+const { signs } = require('../lib/zodiac-data.js');
 
-describe('zodiac route', () => {
+describe('signs route', () => {
   it('/signs should return list of signs', async () => {
     const res = await request(app).get('/signs');
     const expected = signs.map((sign) => {
       return { id: sign.id, name: sign.name };
     });
-    expected(res.body).toEqual(expected);
+    expect(res.body).toEqual(expected);
   });
 });
