@@ -24,9 +24,9 @@ describe('signs route', () => {
   });
 });
 
-describe('horosigns routes', () => {
+describe('horoSigns routes', () => {
   it('/horoscopes/:sign should return horoscope by sign', async () => {
-    const res = await request(app).get('horoscopes/capricorn');
+    const res = await request(app).get('/horoscopes/capricorn');
     const capricorn = {
       id: '4',
       sign: 'capricorn',
