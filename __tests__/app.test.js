@@ -23,3 +23,15 @@ describe('signs route', () => {
     expect(res.body).toEqual(aquarius);
   });
 });
+
+describe('horosigns routes', () => {
+  it('/horoscopes/:sign should return horoscope by sign', async () => {
+    const res = await request(app).get('horoscopes/capricorn');
+    const capricorn = {
+      id: '4',
+      sign: 'capricorn',
+      horoscope: 'Screw any relationship that does not make you money',
+    };
+    expect(res.body).toEqual(capricorn.horoscope);
+  });
+});
